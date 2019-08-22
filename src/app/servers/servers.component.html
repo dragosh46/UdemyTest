@@ -24,4 +24,6 @@
 <button class="btn btn-primary"(click)="isVisible()">Display Details</button>
 <br>
 <p [ngClass]="{ isVisible: visiblePharagraph === false }">Secret password = tuna</p>
+<p *ngFor="let log of loggedClicks">{{log}}</p>
+
 

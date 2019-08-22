@@ -22,6 +22,8 @@ export class ServersComponent implements OnInit {
   serverCreated = false;
   servers = ['Testserver', 'Testserver 2'];
   visiblePharagraph = true;
+  date = new Date();
+  loggedClicks = [] = [];
 
   constructor() {
     setTimeout(() => {
@@ -42,6 +44,10 @@ export class ServersComponent implements OnInit {
     this.serverName = (<HTMLInputElement>event.target).value;
   }
   isVisible() {
+    this.logs();
     return this.visiblePharagraph = !this.visiblePharagraph;
+  }
+  logs() {
+    this.loggedClicks.push(this.date.getTime());
   }
 }
