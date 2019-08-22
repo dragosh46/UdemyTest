@@ -22,7 +22,7 @@ export class ServersComponent implements OnInit {
   serverCreated = false;
   servers = ['Testserver', 'Testserver 2'];
   visiblePharagraph = true;
-  date = new Date();
+  date;
   loggedClicks = [] = [];
 
   constructor() {
@@ -39,7 +39,6 @@ export class ServersComponent implements OnInit {
     this.servers.push(this.serverName);
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
-
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
   }
@@ -48,6 +47,7 @@ export class ServersComponent implements OnInit {
     return this.visiblePharagraph = !this.visiblePharagraph;
   }
   logs() {
-    this.loggedClicks.push(this.date.getTime());
+    this.date = new Date();
+    this.loggedClicks.push(this.date.toString());
   }
 }
